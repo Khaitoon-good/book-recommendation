@@ -1,0 +1,77 @@
+/* ฟอนต์ */
+h1 {
+  font-family: 'Sriracha', cursive;
+  color: #2A4EA2;
+  font-size: 3rem;
+}
+
+h2, h3, p {
+  font-family: 'IBM Plex Sans Thai', sans-serif;
+}
+
+h2 { color: #fff; }
+h3 { color: #000; font-size: 1.8rem; }
+p { font-size: 1.1rem; color: #333; }
+
+/* พื้นหลังและ body */
+body {
+  background-color: #fdf6e3;
+  margin: 0;
+  padding: 0;
+}
+
+/* พื้นหลังเทา */
+.gray-background {
+  background-color: #F5A835;
+  padding: 60px 0;
+  border-radius: 16px;
+  margin: 0 auto;
+}
+
+/* เนื้อหาภายใน */
+.inner {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+/* ภาพ */
+.image img {
+  max-width: 100%;
+  border-radius: 16px;
+}
+
+/* กล่องเนื้อหา */
+.light-background {
+  background-color: #fcdba9;
+}
+
+/* benefit box */
+.benefit-box2 {
+  background-color: #fcdba9;
+  border-radius: 16px;
+  padding: 30px;
+  margin: 50px auto;
+  max-width: 900px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ปุ่ม back to top */
+#backToTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: none;
+  font-size: 1.5rem;
+  padding: 10px 14px;
+  z-index: 1000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  .inner { flex-direction: column; text-align: center; }
+}
