@@ -2,16 +2,16 @@
 h1 {
   font-family: 'Sriracha', cursive;
   color: #2A4EA2;
-  font-size: 3rem;
+  font-size: 5rem;
 }
 
 h2, h3, p {
-  font-family: 'IBM Plex Sans Thai', sans-serif;
+  font-family: 'IBM Plex Sans Thai', sans-serif; 
 }
 
-h2 { color: #fff; }
-h3 { color: #000; font-size: 1.8rem; }
-p { font-size: 1.1rem; color: #333; }
+h2 { color: #fff;  }
+h3 { color: #000; font-size: 2rem; }
+p { font-size: 1.5rem; color: #333; }
 
 /* พื้นหลังและ body */
 body {
@@ -19,6 +19,22 @@ body {
   margin: 0;
   padding: 0;
 }
+
+
+.accordion-button {
+  font-size: 1.2rem; /* เพิ่มขนาดตัวอักษร เช่น 1.2rem */
+  font-weight: 600;  /* (ไม่บังคับ) ทำให้หนาขึ้น */
+}
+
+
+
+
+
+
+
+
+
+
 
 /* พื้นหลังเทา */
 .gray-background {
@@ -75,3 +91,185 @@ body {
   h1 { font-size: 2rem; }
   .inner { flex-direction: column; text-align: center; }
 }
+
+
+
+#bookCarousel img {
+  max-width: 90%;  /* ลดความกว้างเหลือ 70% */
+  max-height: 1200px; /* จำกัดความสูงสูงสุด */
+  margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
+ 
+/* กล่องสีส้ม */
+.book-section {
+  background-color: #f5a623;
+  border-radius: 30px;
+  padding: 100px 40px;
+  text-align: center;
+  min-height: 950px; /* ✅ ใหญ่ขึ้นมาก */
+  position: relative;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+/* เนื้อหาข้างในกล่องสีส้ม */
+.book-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ข้อความหัวเรื่อง */
+.book-content h2 {
+  font-size: 3rem; /* ✅ ใหญ่ขึ้นจาก 2 → 3 */
+  color: #fffde8;
+  margin-bottom: 20px;
+}
+
+/* ข้อความรอง */
+.book-content h3 {
+  font-size: 3.5rem; /* ✅ ใหญ่ขึ้นจาก 2.2 → 3.5 */
+  color: #214eb8;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+/* รูปหนังสือ */
+.book-content img {
+  width: 500px; /* ✅ ใหญ่ขึ้นจาก 350 → 500 */
+  border: none;
+  box-shadow: none;
+  border-radius: 10px;
+}
+
+
+
+/* ====================== */
+/* ✅ Animation Section   */
+/* ====================== */
+
+/* เริ่มอนิเมชั่นเมื่อโหลดหน้าเว็บ */
+.animate {
+  animation: fadeInUp 1.2s ease-out, moveToCenter 1.6s ease-out forwards;
+}
+
+/* เคลื่อนจากขอบล่างเข้ากลาง */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* เคลื่อนจากขอบซ้าย (ข้อความ) และขอบขวา (รูป) */
+.book-content h2 {
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+.book-content h3 {
+  animation: slideInLeft 1.2s ease-out forwards;
+}
+
+.book-content img {
+  animation: slideInRight 1.3s ease-out forwards;
+}
+
+/* แยก keyframes */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-120px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(120px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+.floating-decorations {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.butterfly {
+  position: absolute;
+  font-size: 2rem;
+  animation: floatUp 12s linear infinite;
+  opacity: 0.7;
+}
+
+/* กำหนดตำแหน่งสุ่มนิดหน่อย */
+.butterfly:nth-child(1) { left: 10%; animation-delay: 0s; }
+.butterfly:nth-child(2) { left: 50%; animation-delay: 4s; }
+.butterfly:nth-child(3) { left: 80%; animation-delay: 8s; }
+.butterfly:nth-child(4) { left: 30%; animation-delay: 4s; }
+.butterfly:nth-child(5) { left: 10%; animation-delay: 8s; }
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) scale(0.8) rotate(0deg);
+    opacity: 0;
+  }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% {
+    transform: translateY(-10vh) scale(1) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+
+
+footer {
+  display: flex;
+  justify-content: center; /* จัดให้อยู่กลางแนวนอน */
+  align-items: center;
+  background-color: #fff8e1; /* สีพื้นหลังจอ (ปรับได้) */
+  padding: 20px 0;
+}
+
+.footer-box {
+  background-color: #ffffff; /* กล่องพื้นขาว */
+  border: 2px solid #ffcc80; /* ขอบสีอ่อน */
+  border-radius: 15px; /* มุมโค้ง */
+  padding: 10px 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* เงาเบา ๆ */
+  font-family: "Sarabun", sans-serif;
+  text-align: center;
+}
+
